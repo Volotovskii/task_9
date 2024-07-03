@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор случайных пользователей</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+     <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="card" id="card">
+    <div class="card-front">
+        <div class="bord " id="card_0">
+            <img id="pers_img" src="images/reset.jpg" alt="person">
+            <div class="profFront">
+                <span id="ProfessionFront"></span>
+                <p> <span id="genderOutputFront"></span></p>
+            </div>
+        </div>
+        <div class="opsFront">
+            <span id="surnameOutputFront"></span>
+            <span id="firstNameOutputFront"></span>
+            <span id="PatronymicFront"></span>
+        </div>  
+
+        <div class="data">
+            <span id="dataFront"></span>
+        </div>
+    </div>
+
+    <div class="card-back">
+        <div class="bord " id="card_1">
+            <img id="pers_img_back" src="">
+            <div class="profBack">
+                <span id="ProfessionBack"></span>
+                <p> <span id="genderOutputBack"></span></p>
+            </div>
+        </div>
+        <div class="opsBack">
+            <span id="surnameOutputBack"></span>
+            <span id="firstNameOutputBack"></span>
+            <span id="PatronymicBack"></span>
+        </div>  
+
+        <div class="data">
+            <span id="dataBack"></span>
+        </div>
+    </div>
+</div>
+      <button class="button" id="generate-button">Сгенерировать</button>
+      <button class="button" id="reset-button">Сбросить</button>
+
+</div>
+<script src="personGenerator.js"></script>
+<script src="init.js"></script>
+</body>
+</html>

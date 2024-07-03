@@ -1,0 +1,105 @@
+body {
+    font-family: sans-serif;
+    background-color: #393530;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    width: 250px;
+    height: 404px;
+    perspective: 600px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+
+}
+.bord{
+    margin: 5px;
+    height: 292px;
+    border: 1px solid black;
+    border-radius: 40px 40px 0px 0px;
+    box-shadow: 6px 10px 9px rgba(0, 0, 0, 0.2);
+}
+.profFront,.opsFront,.profBack,.opsBack{
+    margin: 0;
+    text-align: center;
+}
+.data {
+    margin: 18px;
+    text-align: center;
+}
+img#persImg{
+    border: 0px solid black;
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 40px 40px 0px 0px;
+}
+.card-front,
+.card-back {
+
+    width: 250px;
+    height: 404px;
+    backface-visibility: hidden;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.8s; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(14, 12, 12);
+}
+
+.card-front {
+    background-color: blanchedalmond;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    background-color: blanchedalmond;
+    transform: rotateY(180deg);
+}
+.card.flipped .card-front { 
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-back { 
+    transform: rotateY(0deg);
+}
+.card-front img, .card-back img {
+
+    object-fit: cover;
+    border: 0px solid black;
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 40px 40px 0px 0px;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}

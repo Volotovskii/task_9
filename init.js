@@ -87,7 +87,7 @@ window.onload = function()
     document.getElementById('ProfessionBack').innerText = initPerson.Profession;
     
     document.getElementById('dataBack').innerText = initPerson.data;
-}, 800); 
+}, 400); 
 
     }
 

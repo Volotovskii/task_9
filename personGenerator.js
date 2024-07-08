@@ -166,13 +166,37 @@ const personGenerator = {
           "Не указан пол";
     },
 
-     randomPatronymic(gender) {
-        return gender === "Мужчина" ? 
-        this.randomValue(this.malePatronymics) :
-          gender === "Женщина" ?
-          this.randomValue(this.femalePatronymics) :
-            "Не указан пол";
-      },
+      randomPatronymic: function (gender) {
+        const malePatronymic = this.randomValue(this.firstNameMaleJson);
+        const last = malePatronymic.slice(-3);
+        if (gender === "Мужчина") {
+            // const malePatronymic = this.randomValue(this.firstNameMaleJson);
+            // const last = malePatronymic.slice(-3);
+            switch (last) {
+                case 'иил':
+                    return malePatronymic+'ович';
+                case 'ита':
+                    return malePatronymic.replace(/а$/, 'ович');
+                case 'рий':
+                case 'рей':
+                    return malePatronymic.replace(/й$/, 'евич');
+                default:
+                    return malePatronymic + 'ович';
+            }
+        } else if (gender === "Женщина") {
+
+            // поиск через обьект 
+            const endings = {
+                'рий': 'евна',
+                'ита': 'ична',
+                'аил': 'ловна',
+                'рей': 'евна'
+            };
+            // undefined  + 'овна'
+            return endings[last] ? malePatronymic.slice(0, -1) + (endings[last]) : malePatronymic + 'овна';    
+        }
+    },
+
 
     randomProfession(gender) {
         return gender === "Мужчина" ?
